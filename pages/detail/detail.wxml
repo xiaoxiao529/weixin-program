@@ -1,0 +1,10 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if='{{loading}}'>
+  <image mode='aspectFit' style='width:100%' src='{{detailData.images.small}}'></image>
+  <view class='wrap'>
+    <view class='title'>{{detailData.original_title}}</view>
+    <view class='title'>{{detailData.genres}} / {{detailData.countries}}</view>
+    <text class='text' wx:for='{{detailData.casts}}' wx:key='index'>{{item.name}} / </text>
+    <view class='summary'>{{detailData.summary}}</view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+/* pages/detail/detail.wxss */
+.wrap{
+  padding: 20rpx;
+  font-family: '微软雅黑';
+}
+.wrap .title{
+  font-size: 20px;
+  color:#000;
+}
+.wrap .text{
+  font-size: 12px;
+  line-height: 24px;
+  color:#333;
+}
+.wrap .summary{
+  font-size: 14px;
+  line-height: 20px;
+  color:#000;
+}
