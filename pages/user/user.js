@@ -1,20 +1,36 @@
-// pages/user/user.js
+// pages/user/user.js  点击详情页的时候把数据缓存到本地，然后进入user页尝试进行读取
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{},
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    wx.getUserInfo({
+      success: (res) => {
+        let userInfo = res.userInfo;
+        this.setData({
+          userInfo
+        })
+      }
+    });
+    
   },
-
+  getUserInfo(ev){
+    let userInfo = ev.detail.userInfo;
+    console.log(userInfo)
+    this.setData({
+      userInfo
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,7 +42,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let self = this;
+    wx.getStorage({
+      key: 'movie',
+      success: function (res) {
+        console.log(res.data)
+        self.setData({
+          list: res.data
+        })
+      },
+    })
   },
 
   /**

@@ -5,14 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:[
+      {
+        title:'爱情',
+        src:'/assets/image/aiqing.png'
+      },
+      {
+        title: '动画',
+        src: '/assets/image/donghua.png'
+      },
+      {
+        title: '动作',
+        src: '/assets/image/dongzuo.png'
+      },
+      {
+        title: '科幻',
+        src: '/assets/image/kehuan.png'
+      },
+      {
+        title: '喜剧',
+        src: '/assets/image/xiju.png'
+      }
+    ],
+    type:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
 
+  toSubjectList(ev) {
+    let type = ev.currentTarget.dataset.type;
+    wx.navigateTo({
+      url: `/pages/subject-list/subject-list?type=${type}`
+    })
   },
 
   /**

@@ -1,1 +1,20 @@
 /* pages/subject/subject.wxss */
+.subject-list{
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.subject-list view{
+  width: 100%;
+}
+.subject-list view image{
+  width: 100%;
+  border-radius: 10px;
+}
+.subject-list text{
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font: bold 20px/20px '微软雅黑';
+  color: #fff;
+}

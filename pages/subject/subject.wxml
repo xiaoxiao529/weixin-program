@@ -1,2 +1,6 @@
 <!--pages/subject/subject.wxml-->
-<text>pages/subject/subject.wxml</text>
+<view wx:for='{{list}}' wx:key='{{index}}' class='subject-list' data-type='{{item.title}}' bind:tap='toSubjectList'>
+  <view><image mode='widthFix' src='{{item.src}}'></image></view>
+  <text>{{item.title}}</text>
+</view>
+

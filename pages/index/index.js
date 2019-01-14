@@ -16,7 +16,6 @@ Page({
     }
   },
   toDetails(ev){
-    console.log(ev.currentTarget.dataset.id);
     wx.navigateTo({
       url: `/pages/detail/detail?id=${ev.currentTarget.dataset.id}`,
     })
@@ -45,8 +44,7 @@ Page({
       url: `https://data.miaov.com/h5-view/v/movie/list/?page_start=${this.data.pageIndex}`,
       success: (res) => {
         let { pageIndex,list } = this.data;  
-        console.log(res.data.subjects);
-        list.push(...res.data.subjects);
+        list.push(...res.data.subjects);  //list数组每次push进10条数据
         pageIndex += 10;  /* 请求成功之后，页数加10 */
         this.setData({
           list,

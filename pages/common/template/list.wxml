@@ -1,0 +1,12 @@
+<template name='movie-list'>
+  <scroll-view style="height: 100%;" scroll-y='true' lower-threshold='50' bind:scrolltolower="lower">
+    <view class='item' wx:for='{{list}}' wx:key='{{index}}' data-id='{{item.id}}' bind:tap='toDetails'>
+      <image src='{{item.cover}}'></image>
+      <text>{{item.title}}/{{item.rate}}分</text>
+    </view>
+    <!-- 自定义loading，和微信自带loading二选一即可 -->
+    <view class='loading' wx:if='{{loading}}'>
+      <image mode='widthFix' src='/assets/loading/loading-bars.svg'></image>
+    </view>
+  </scroll-view>
+</template>  

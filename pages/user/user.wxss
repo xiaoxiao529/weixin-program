@@ -1,1 +1,18 @@
 /* pages/user/user.wxss */
+@import '/pages/common/template/list.wxss'
+.user-info{
+  text-align: center;
+}
+.user-info image{
+  width: 200rpx;
+  text-align: center;
+}
+.userNick{
+  text-align: center;
+}
+.view-history{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 16px;
+}

@@ -1,2 +1,19 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<button wx:if='{{!userInfo.nickName}}' open-type='getUserInfo' bindgetuserinfo="getUserInfo">获取用户信息</button>
+<view class='user-info' wx:if='{{userInfo.nickName}}'>
+  <image mode='widthFix' src='{{userInfo.avatarUrl}}'></image>
+  <view class='userNick'>昵称：{{userInfo.nickName}}</view>
+</view>
+<hr /> 
+<view class='view-history'>
+  <view wx:if='{{!list.length}}'>
+    <text>暂无历史记录</text>
+  </view>
+  <view wx:else>
+    <view class='item' wx:for='{{list}}' wx:key='{{index}}' data-id='{{item.id}}' bind:tap='toDetails'>
+      <image src='{{item.images.small}}'></image>
+      <text>{{item.title}}/{{item.rating.average}}分</text>
+    </view>
+  </view>
+
+</view>
