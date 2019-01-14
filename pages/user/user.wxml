@@ -7,9 +7,12 @@
 <hr /> 
 <view class='view-history'>
   <view wx:if='{{!list.length}}'>
-    <text>暂无历史记录</text>
+    <text style='padding:0 0 15px 15px'>暂无历史记录</text>
   </view>
   <view wx:else>
+    <view>
+      <text style='padding:0 0 15px 15px'>浏览历史：</text>
+    </view>
     <view class='item' wx:for='{{list}}' wx:key='{{index}}' data-id='{{item.id}}' bind:tap='toDetails'>
       <image src='{{item.images.small}}'></image>
       <text>{{item.title}}/{{item.rating.average}}分</text>
