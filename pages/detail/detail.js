@@ -41,7 +41,11 @@ Page({
           detailData: res.data,
           loading:true
         })
-        
+        //数组里面已经存在了，进行过滤，即去掉已经存在的那个，然后unshift存在的那个
+        this.data.storageData = this.data.storageData.filter((value,key)=>{
+          return value.reviews_count != res.data.reviews_count;
+        })
+        console.log(this.data.storageData)
         this.data.storageData.unshift(res.data);  //进行unshift操作，把新的值插入到数组的前面
         wx.setStorage({
           key: 'movie',
